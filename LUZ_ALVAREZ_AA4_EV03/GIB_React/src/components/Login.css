@@ -1,0 +1,224 @@
+/* Estilos del componente Login - Sistema GIB Cosmeticos Kitty */
+
+.login-contenedor {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Panel izquierdo decorativo */
+.login-panel-izquierdo {
+  flex: 1;
+  background: linear-gradient(135deg, #E91E8C 0%, #C2166F 50%, #1A1D2E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.login-decoracion {
+  text-align: center;
+  color: white;
+}
+
+.login-logo-grande {
+  font-size: 80px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.login-marca {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.login-eslogan {
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.login-caracteristicas {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.login-caracteristica {
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 14px;
+  color: white;
+  backdrop-filter: blur(4px);
+}
+
+/* Panel derecho con el formulario */
+.login-panel-derecho {
+  width: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F7F8FC;
+  padding: 40px;
+}
+
+.login-formulario-contenedor {
+  width: 100%;
+  max-width: 380px;
+}
+
+.login-encabezado {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-icono {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.login-titulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #2C3E50;
+  margin-bottom: 4px;
+}
+
+.login-subtitulo {
+  color: #7F8C9A;
+  font-size: 13px;
+}
+
+/* Formulario */
+.login-form {
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+.login-error {
+  background: #fde8e8;
+  color: #E74C3C;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  border-left: 4px solid #E74C3C;
+}
+
+.login-campo {
+  margin-bottom: 18px;
+}
+
+.login-campo label {
+  display: block;
+  font-weight: 600;
+  color: #2C3E50;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.login-campo input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #E8EDF2;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #2C3E50;
+  transition: border-color 0.2s;
+}
+
+.login-campo input:focus {
+  outline: none;
+  border-color: #E91E8C;
+}
+
+.login-boton {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #E91E8C, #C2166F);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.login-boton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(233, 30, 140, 0.4);
+}
+
+.login-boton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Ayuda con usuarios de prueba */
+.login-ayuda {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 16px;
+}
+
+.login-ayuda-titulo {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7F8C9A;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.login-usuario-prueba {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #2C3E50;
+}
+
+.badge-rol {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 72px;
+  text-align: center;
+}
+
+.badge-rol.admin { background: #FCE4F3; color: #E91E8C; }
+.badge-rol.vendedor { background: #e8f4fd; color: #3498DB; }
+.badge-rol.almacen { background: #d5f5e3; color: #27AE60; }
+
+.login-pie {
+  text-align: center;
+  font-size: 12px;
+  color: #7F8C9A;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-contenedor { flex-direction: column; }
+  .login-panel-izquierdo { padding: 30px; min-height: 220px; }
+  .login-panel-derecho { width: 100%; padding: 24px; }
+  .login-marca { font-size: 26px; }
+  .login-logo-grande { font-size: 50px; }
+}

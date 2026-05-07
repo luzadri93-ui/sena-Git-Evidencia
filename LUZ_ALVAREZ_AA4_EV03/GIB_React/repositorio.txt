@@ -1,0 +1,12 @@
+=====================================================
+ENLACE DEL REPOSITORIO - EVIDENCIA AA4-EV03
+=====================================================
+Repositorio: https://github.com/luzadri93-ui/sena-Git-Evidencia
+Rama: main
+Aprendiz: Luz Adriana Alvarez Garcia
+Ficha: 3070319
+Evidencia: GA7-220501096-AA4-EV03
+Proyecto: GIB - Sistema de Gestion de Inventario de Belleza
+Empresa: Cosmeticos Kitty
+Tecnologia: React JS
+=====================================================

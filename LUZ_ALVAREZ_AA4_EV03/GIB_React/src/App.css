@@ -1,0 +1,339 @@
+/**
+ * Estilos globales del sistema GIB - Cosmeticos Kitty
+ * Paleta de colores basada en la identidad de marca de Cosmeticos Kitty
+ * 
+ * Variables CSS para consistencia en toda la aplicacion
+ */
+
+/* ===== VARIABLES CSS - SISTEMA DE DISENO ===== */
+:root {
+  /* Colores principales - Identidad Cosmeticos Kitty */
+  --color-primario: #E91E8C;       /* Fucsia principal */
+  --color-primario-oscuro: #C2166F; /* Fucsia oscuro para hover */
+  --color-primario-claro: #FCE4F3;  /* Fucsia claro para fondos */
+  --color-secundario: #1A1D2E;     /* Sidebar oscuro */
+  --color-acento: #FF6B9D;         /* Rosa acento */
+  
+  /* Colores de estado (semaforo de inventario) */
+  --color-ok: #27AE60;             /* Stock OK - Verde */
+  --color-bajo: #F39C12;           /* Stock Bajo - Amarillo */
+  --color-critico: #E74C3C;        /* Stock Critico - Rojo */
+  --color-info: #3498DB;           /* Informacion - Azul */
+  
+  /* Colores neutros */
+  --color-fondo: #F7F8FC;          /* Fondo general */
+  --color-blanco: #FFFFFF;
+  --color-texto: #2C3E50;          /* Texto principal */
+  --color-texto-claro: #7F8C9A;    /* Texto secundario */
+  --color-borde: #E8EDF2;          /* Bordes y separadores */
+  
+  /* Tipografia */
+  --fuente-titulos: 'Poppins', sans-serif;
+  --fuente-cuerpo: 'Nunito', sans-serif;
+  
+  /* Espaciados */
+  --espaciado-xs: 4px;
+  --espaciado-sm: 8px;
+  --espaciado-md: 16px;
+  --espaciado-lg: 24px;
+  --espaciado-xl: 32px;
+  
+  /* Bordes redondeados */
+  --radio-sm: 6px;
+  --radio-md: 10px;
+  --radio-lg: 16px;
+  
+  /* Sombras */
+  --sombra-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --sombra-md: 0 4px 16px rgba(0,0,0,0.12);
+  --sombra-lg: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+/* ===== RESET Y BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.contenido-principal {
+  flex: 1;
+  padding: var(--espaciado-xl);
+  overflow-y: auto;
+  background-color: var(--color-fondo);
+}
+
+/* ===== COMPONENTES REUTILIZABLES ===== */
+
+/* Tarjetas */
+.tarjeta {
+  background: var(--color-blanco);
+  border-radius: var(--radio-lg);
+  padding: var(--espaciado-xl);
+  box-shadow: var(--sombra-sm);
+  margin-bottom: var(--espaciado-lg);
+}
+
+/* Botones */
+.btn-primario {
+  background: var(--color-primario);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radio-md);
+  font-family: var(--fuente-cuerpo);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primario:hover {
+  background: var(--color-primario-oscuro);
+  transform: translateY(-1px);
+  box-shadow: var(--sombra-sm);
+}
+
+.btn-secundario {
+  background: transparent;
+  color: var(--color-primario);
+  border: 2px solid var(--color-primario);
+  padding: 8px 18px;
+  border-radius: var(--radio-md);
+  font-family: var(--fuente-cuerpo);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secundario:hover {
+  background: var(--color-primario-claro);
+}
+
+.btn-peligro {
+  background: var(--color-critico);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: var(--radio-sm);
+  font-family: var(--fuente-cuerpo);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-peligro:hover {
+  background: #c0392b;
+}
+
+.btn-editar {
+  background: var(--color-info);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: var(--radio-sm);
+  font-family: var(--fuente-cuerpo);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-editar:hover {
+  background: #2980b9;
+}
+
+/* Campos de formulario */
+.campo-formulario {
+  margin-bottom: var(--espaciado-md);
+}
+
+.campo-formulario label {
+  display: block;
+  font-weight: 600;
+  color: var(--color-texto);
+  margin-bottom: var(--espaciado-xs);
+  font-size: 13px;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio-md);
+  font-family: var(--fuente-cuerpo);
+  font-size: 14px;
+  color: var(--color-texto);
+  transition: border-color 0.2s ease;
+  background: white;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+}
+
+/* Badges de estado */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.badge-ok { background: #d5f5e3; color: var(--color-ok); }
+.badge-bajo { background: #fef9e7; color: var(--color-bajo); }
+.badge-critico { background: #fde8e8; color: var(--color-critico); }
+.badge-pendiente { background: #fef9e7; color: var(--color-bajo); }
+.badge-completado { background: #d5f5e3; color: var(--color-ok); }
+.badge-cancelado { background: #fde8e8; color: var(--color-critico); }
+.badge-admin { background: var(--color-primario-claro); color: var(--color-primario); }
+.badge-empleado { background: #e8f4fd; color: var(--color-info); }
+
+/* Tablas */
+.tabla-datos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-datos th {
+  background: var(--color-fondo);
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-texto-claro);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tabla-datos td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-borde);
+  font-size: 14px;
+  color: var(--color-texto);
+}
+
+.tabla-datos tr:hover td {
+  background: var(--color-primario-claro);
+}
+
+/* Titulos de seccion */
+.titulo-seccion {
+  font-family: var(--fuente-titulos);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-texto);
+  margin-bottom: var(--espaciado-sm);
+}
+
+.subtitulo-seccion {
+  color: var(--color-texto-claro);
+  font-size: 14px;
+  margin-bottom: var(--espaciado-xl);
+}
+
+/* Cabecera de modulo */
+.cabecera-modulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--espaciado-xl);
+}
+
+/* Formulario modal */
+.formulario-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaciado-md);
+}
+
+.formulario-grid .campo-completo {
+  grid-column: 1 / -1;
+}
+
+/* Barra de busqueda */
+.barra-busqueda {
+  display: flex;
+  gap: var(--espaciado-md);
+  margin-bottom: var(--espaciado-lg);
+  align-items: center;
+}
+
+.barra-busqueda input {
+  flex: 1;
+  padding: 10px 16px;
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio-md);
+  font-family: var(--fuente-cuerpo);
+  font-size: 14px;
+}
+
+.barra-busqueda input:focus {
+  outline: none;
+  border-color: var(--color-primario);
+}
+
+/* Mensaje de error */
+.mensaje-error {
+  background: #fde8e8;
+  color: var(--color-critico);
+  padding: 10px 16px;
+  border-radius: var(--radio-md);
+  font-size: 13px;
+  margin-bottom: var(--espaciado-md);
+  border-left: 4px solid var(--color-critico);
+}
+
+/* Mensaje de exito */
+.mensaje-exito {
+  background: #d5f5e3;
+  color: var(--color-ok);
+  padding: 10px 16px;
+  border-radius: var(--radio-md);
+  font-size: 13px;
+  margin-bottom: var(--espaciado-md);
+  border-left: 4px solid var(--color-ok);
+}
+
+/* Acciones de tabla */
+.acciones-tabla {
+  display: flex;
+  gap: var(--espaciado-xs);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contenido-principal {
+    padding: var(--espaciado-md);
+  }
+  
+  .formulario-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cabecera-modulo {
+    flex-direction: column;
+    gap: var(--espaciado-md);
+    align-items: flex-start;
+  }
+}

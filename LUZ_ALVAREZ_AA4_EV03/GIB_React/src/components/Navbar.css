@@ -1,0 +1,179 @@
+/* Estilos del componente Navbar - Sistema GIB */
+
+.navbar {
+  width: 220px;
+  min-height: 100vh;
+  background: #1A1D2E;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+}
+
+/* Encabezado */
+.navbar-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar-logo { font-size: 28px; }
+
+.navbar-marca {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-nombre-sistema {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #E91E8C;
+  line-height: 1;
+}
+
+.navbar-empresa {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.4;
+}
+
+/* Usuario */
+.navbar-usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px;
+}
+
+.navbar-avatar {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #E91E8C, #C2166F);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.navbar-usuario-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.navbar-usuario-nombre {
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navbar-usuario-rol {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-top: 2px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.rol-administrador { background: rgba(233,30,140,0.2); color: #E91E8C; }
+.rol-vendedor { background: rgba(52,152,219,0.2); color: #3498DB; }
+.rol-almacen { background: rgba(39,174,96,0.2); color: #27AE60; }
+
+/* Separador */
+.navbar-separador {
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 8px 18px;
+}
+
+/* Menu de navegacion */
+.navbar-menu {
+  list-style: none;
+  flex: 1;
+  padding: 8px 10px;
+}
+
+.navbar-menu li { margin-bottom: 2px; }
+
+.navbar-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.navbar-item:hover {
+  background: rgba(255,255,255,0.07);
+}
+
+.navbar-item-activo {
+  background: linear-gradient(135deg, rgba(233,30,140,0.25), rgba(233,30,140,0.1)) !important;
+  border-left: 3px solid #E91E8C;
+}
+
+.navbar-item-icono {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.navbar-item-etiqueta {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+}
+
+.navbar-item-activo .navbar-item-etiqueta {
+  color: #E91E8C;
+}
+
+/* Pie del navbar */
+.navbar-pie {
+  padding: 0 10px 10px;
+}
+
+.navbar-logout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  background: rgba(231,76,60,0.1);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #E74C3C;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.2s;
+  margin-bottom: 10px;
+}
+
+.navbar-logout:hover {
+  background: rgba(231,76,60,0.2);
+}
+
+.navbar-version {
+  text-align: center;
+  font-size: 10px;
+  color: rgba(255,255,255,0.25);
+}

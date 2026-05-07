@@ -1,0 +1,17 @@
+ENLACE AL REPOSITORIO GITHUB
+=============================
+
+URL: https://github.com/luzadri93-ui/sena-Git-Evidencia
+
+Usuario GitHub: luzadri93-ui
+Repositorio: sena-Git-Evidencia
+Rama principal: master
+
+<<<<<<< HEAD
+Evidencia: GA7-220501096-AA3-EV01
+Framework utilizado: Spring Boot 3.2.0
+=======
+Evidencia: GA7-220501096-AA2-EV02
+>>>>>>> cfa16aaa2e4eb8c0b80c2f2b1490751571501741
+Autor: Luz Adriana Alvarez Garcia
+Ficha: 3070319
