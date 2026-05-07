@@ -1,0 +1,119 @@
+=====================================================
+ENDPOINTS DE LA API - GA7-220501096-AA5-EV03
+Sistema GIB - APIs Completas del Proyecto
+Aprendiz: Luz Adriana Alvarez Garcia
+Ficha: 3070319
+Puerto: 8082
+=====================================================
+
+URL BASE: http://localhost:8082
+
+=====================================================
+MODULO 1: PRODUCTOS (Historia de Usuario #1)
+=====================================================
+GET    http://localhost:8082/api/productos              - Listar todos
+GET    http://localhost:8082/api/productos/{id}         - Obtener por ID
+GET    http://localhost:8082/api/productos/buscar?nombre=crema - Buscar
+GET    http://localhost:8082/api/productos/alertas      - Stock bajo (CU-005)
+POST   http://localhost:8082/api/productos              - Registrar (CU-001)
+PUT    http://localhost:8082/api/productos/{id}         - Actualizar (CU-002)
+DELETE http://localhost:8082/api/productos/{id}         - Eliminar (CU-002)
+
+Body POST/PUT (JSON):
+{
+    "codigoProducto": "P001",
+    "nombreProducto": "Shampoo Hidratante 500ml",
+    "categoria": "Cabello",
+    "proveedor": "Belleza Total",
+    "precioVenta": 28000,
+    "stockActual": 15,
+    "stockMinimo": 10,
+    "fechaVencimiento": "2026-08-15"
+}
+
+=====================================================
+MODULO 2: PEDIDOS (Historia de Usuario #2 - CU-003)
+=====================================================
+GET  http://localhost:8082/api/pedidos                  - Listar todos
+GET  http://localhost:8082/api/pedidos/{id}             - Obtener por ID
+GET  http://localhost:8082/api/pedidos/estado/pendiente - Por estado
+POST http://localhost:8082/api/pedidos                  - Crear pedido
+PUT  http://localhost:8082/api/pedidos/{id}/estado      - Cambiar estado
+
+Body POST (JSON):
+{
+    "nombreCliente": "Maria Garcia Lopez",
+    "vendedor": "Luz Adriana Alvarez",
+    "producto": "Shampoo Hidratante 500ml",
+    "cantidad": 2,
+    "total": 56000,
+    "observaciones": "Entrega inmediata"
+}
+
+Body PUT estado (JSON):
+{
+    "estado": "completado"
+}
+
+Estados validos: pendiente, completado, cancelado
+
+=====================================================
+MODULO 3: CLIENTES (Historia de Usuario #3)
+=====================================================
+GET    http://localhost:8082/api/clientes               - Listar todos
+GET    http://localhost:8082/api/clientes/{id}          - Obtener por ID
+GET    http://localhost:8082/api/clientes/buscar?nombre=maria - Buscar
+POST   http://localhost:8082/api/clientes               - Registrar
+PUT    http://localhost:8082/api/clientes/{id}          - Actualizar
+DELETE http://localhost:8082/api/clientes/{id}          - Eliminar
+
+Body POST/PUT (JSON):
+{
+    "tipoDocumento": "CC",
+    "numeroDocumento": "1020304050",
+    "nombreCliente": "Maria Garcia Lopez",
+    "telefono": "311-234-5678",
+    "email": "mgarcia@email.com",
+    "direccion": "Cra 15 #32-10, Bogota"
+}
+
+=====================================================
+MODULO 4: PROVEEDORES (Historia de Usuario #4)
+=====================================================
+GET  http://localhost:8082/api/proveedores              - Listar todos
+GET  http://localhost:8082/api/proveedores/{id}         - Obtener por ID
+POST http://localhost:8082/api/proveedores              - Registrar
+PUT  http://localhost:8082/api/proveedores/{id}         - Actualizar
+
+Body POST/PUT (JSON):
+{
+    "nit": "900123456-1",
+    "nombreProveedor": "Belleza Total S.A.S",
+    "contacto": "Carlos Mendoza",
+    "telefono": "601-234-5678",
+    "email": "ventas@bellezatotal.com",
+    "direccion": "Calle 80 #45-12, Bogota"
+}
+
+=====================================================
+MODULO 5: REPORTES (Historia de Usuario #5 - CU-004)
+=====================================================
+GET http://localhost:8082/api/reportes/resumen          - KPIs generales
+GET http://localhost:8082/api/reportes/stock-bajo       - Alertas stock (CU-005)
+GET http://localhost:8082/api/reportes/pedidos          - Pedidos por estado
+GET http://localhost:8082/api/reportes/inventario       - Estado inventario
+
+=====================================================
+COMO EJECUTAR:
+cd LUZ_ALVAREZ_AA5_EV03
+mvn spring-boot:run
+
+REPOSITORIO GITHUB:
+https://github.com/luzadri93-ui/sena-Git-Evidencia
+Rama: main
+
+ARQUITECTURA DE LAS 3 APIs:
+Puerto 8080 - Interfaz web Spring MVC (AA3-EV01)
+Puerto 8081 - API Autenticacion (AA5-EV01)
+Puerto 8082 - API Proyecto completo (AA5-EV03) <- esta
+=====================================================
